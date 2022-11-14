@@ -10,7 +10,15 @@ int main(int argc, string argv[])
     int n = strlen(stringa);
     for (int i = 0; i < n; i ++)
     {
-        stringa[i] = stringa[i] + k;
+        if (stringa[i] + k > 122)
+        {
+            int s = (stringa[i] + k) - 122;
+            stringa[i] = 97 + s -1;
+        }
+        else
+        {
+            stringa[i] = stringa[i] + k;
+        }
     }
     printf("Stringa cifrata: %s\n", stringa);
 }
